@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow as tf # type: ignore
 import os
 import numpy as np
 from tensorflow.keras.preprocessing.image import ImageDataGenerator # type: ignore
@@ -10,7 +10,7 @@ from tensorflow.keras.layers import Dropout # type: ignore
 import matplotlib.pyplot as plt
 
 # Définition des paramètres
-data_dir = "tiny-imagenet-200"  # Assurez-vous que ce chemin est correct
+data_dir = "tiny-imagenet-processed"  # Assurez-vous que ce chemin est correct
 num_classes = 10  # Utilisation des 10 premières classes
 img_size = (64, 64)  # Taille des images de Tiny-ImageNet
 batch_size = 64
@@ -97,7 +97,7 @@ with open("classes_learned.txt", "w") as f:
     for class_id, class_name in selected_classes_text.items():
         f.write(f"{class_id}: {class_name}\n")
 
-print("Modèle enregistré sous tiny_imagenet_model.h5")
+print("Modèle enregistré sous tiny_imagenet_processed_model.h5")
 print("Classes apprises enregistrées dans classes_learned.txt")
 
 # Affichage des courbes de perte et de précision
