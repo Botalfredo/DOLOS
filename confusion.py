@@ -4,8 +4,7 @@ import seaborn as sns
 from sklearn.metrics import confusion_matrix, classification_report
 import tensorflow as tf
 import os
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-
+from tensorflow.keras.preprocessing.image import ImageDataGenerator # type: ignore
 # Définition des paramètres
 data_dir = "tiny-imagenet-200"
 img_size = (64, 64)

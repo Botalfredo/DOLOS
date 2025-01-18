@@ -4,6 +4,11 @@ import numpy as np
 import shutil
 from tqdm import tqdm
 
+# Définition des chemins
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))  # Remonter au dossier parent de DOLOS
+dataset_dir = os.path.join(base_dir, "dataset", "tiny-imagenet-200")
+processed_dataset_dir = os.path.join(base_dir, "dataset", "tiny-imagenet-processed")
+
 def add_circular_mask(image):
     """Crée un masque circulaire irrégulier et l'applique à l'image."""
     mask = Image.new("L", (64, 64), 0)
@@ -64,5 +69,5 @@ def process_and_copy_dataset(input_dir, output_dir):
     
     print(f"Traitement terminé ! {len(image_files)} images ont été traitées et enregistrées dans {output_dir}.")
 
-# Exemple d'utilisation
-process_and_copy_dataset("tiny-imagenet-200", "tiny-imagenet-processed")
+# Exécution du script
+process_and_copy_dataset(dataset_dir, processed_dataset_dir)
